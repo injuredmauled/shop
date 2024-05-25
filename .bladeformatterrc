@@ -1,0 +1,8 @@
+{
+    "indentSize": 2,
+    "wrapAttributes": "aligned-multiple",
+    "wrapLineLength": 120,
+    "noMultipleEmptyLines": true,
+    "sortHtmlAttributes": "code-guide",
+    "useTabs": false
+}
