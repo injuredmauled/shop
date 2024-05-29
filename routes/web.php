@@ -7,3 +7,5 @@ Route::get('/', function () {
 });
 
 Route::view('/about', 'about')->name('about');
+
+Route::resource('products', \App\Http\Controllers\ProductController::class);

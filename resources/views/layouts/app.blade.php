@@ -10,21 +10,35 @@
   @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-body">
   <div>
     <header>
       {{-- navbar --}}
-      <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-        <div class="container-fluid">
+      <nav class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
+        <div class="container">
           {{-- navbar brand --}}
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
             <i class="fa-brands fa-laravel me-1"></i>
             <span>Shop</span>
           </a>
 
+          {{-- navbar items toggle button --}}
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#headerNavItems" type="button"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
           {{-- navbar items --}}
           <div class="collapse navbar-collapse" id="headerNavItems">
             <ul class="navbar-nav">
+
+              {{-- products page --}}
+              <li class="nav-item">
+                <a href="{{ route('products.index') }}" aria-current="page" @class(['nav-link', 'active' => Route::is('products.*')])>
+                  <i class="fa-solid fa-box fa-sm me-1"></i>
+                  <span>Products</span>
+                </a>
+              </li>
 
               {{-- about page --}}
               <li class="nav-item">
@@ -37,17 +51,6 @@
             </ul>
           </div>
 
-          {{-- navbar search box --}}
-          <form class="d-flex" role="search">
-            <input class="form-control form-control-sm me-2" type="search" aria-label="Search" placeholder="Search">
-            <button class="btn btn-sm btn-outline-success" type="submit">Search</button>
-          </form>
-
-          {{-- navbar items toggle button --}}
-          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#headerNavItems" type="button"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
         </div>
       </nav>
     </header>
